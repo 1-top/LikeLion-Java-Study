@@ -84,8 +84,10 @@ public class Inheritance05 {
 - 오버라이딩: 상속받은 기준의 메소드를 재정의
 ---
 <h2>11. 다형성</h2>
+
 - 다형성은 상속, 추상화와 더불어 객체 지향 프로그래밍을 구성하는 중요한 특징 중 하나
 - 참조 변수의 타입 변환: (변환할 타입의 클래스 이름) 변환할 참조 변수
+
 ```java
 class Parent {}
 class Child extends Parent {  }
@@ -99,6 +101,7 @@ Brother br = null;
 pa01 = ch;          
 br = (Brother)pa02;
 ```
+
 - instanceof 연산자
 - 참조변수가 참조하고 있는 인스턴스의 실제 타입을 확인할 수 있도록 해줌
 - 참조변수 instanceof 클래스이름
@@ -111,16 +114,20 @@ br = (Brother)pa02;
 ---
 - 인터페이스: 인터페이스를 통한 다중 상속 지원, 추상 메소드와 상수만을 포함
 - 인터페이스 선언 형식
+
 ```
 접근제어자 interface 인터페이스이름 {
     public static final 타입 상수이름 = 값;
     public abstract 메소드이름(매개변수목록);
 }
 ```
+
 - 인터페이스의 구현
+
 ```java
 class 클래스이름 implements 인터페이스이름 {  }
 ```
+
 ---
 - 내부 클래스
 - 하나의 클래스 내부에 선언된 또 다른 클래스
@@ -128,20 +135,25 @@ class 클래스이름 implements 인터페이스이름 {  }
 2. 인스턴스 클래스: 외부 클래스 중에서 static 키워드를 가지지 않는 클래스
 3. 지역 클래스: 외부 클래스의 메소드, 초기화 블록에 선언된 클래스
 4. 익명 클래스: 선언과 동시에 생성해서 참조변수에 대입
+
 ```
 클래스이름 참조변수이름 = new 클래스이름(){
     // 메소드의 선언
 };
 ```
+
 <h2>12.자바 API 클래스</h2>
+
 - Object 클래스
 - java.lang.Object 클래스: 모든 메소드를 바로 사용할 수 있음
 - toString() 메소드: 인스턴스에 대한 정보를 문자열로 반환
 - equals() 메소드: 비교해서 true, false 값 반환
 - clone() 메소드: 인스턴스 복제(단, 필드의 값만 복사하기 때문에 오버라이딩해서 제대로복제할 수 있도록 해야 함)
 ---
+
 - String 클래스
 - charAr() 메소드: 인덱스에 해당하는 문자 반환
+
 ```java
 String str = new String("Java");
 System.out.println("원본 문자열 : " + str);
@@ -150,7 +162,9 @@ for (int i = 0; i < str.length(); i++) {
 }
 System.out.println("\ncharAt() 메소드 호출 후 원본 문자열 : " + str);
 ```
+
 - compareTo() 메소드: 사전 편찬 순으로 비교
+
 ```java
 String str = new String("abcd");
 System.out.println("원본 문자열 : " + str);//abcd
@@ -162,6 +176,7 @@ System.out.println(str.compareTo("Abcd"));
 System.out.println(str.compareToIgnoreCase("Abcd"));
 System.out.println("compareTo() 메소드 호출 후 원본 문자열 : " + str);//abcd
 ```
+
 - concat() 메소드: 해당 문자열의 뒤에 인수로 전달된 문자열을 추가한 새로운 문자열 반환
 - indexOf() 메소드: 특정 문자나 문자열이 등장하는 위치의 인덱스 반환
 - trim() 메소드: 맨 앞과 맨뒤의 공백 문자 제거
@@ -190,6 +205,7 @@ System.out.println("compareTo() 메소드 호출 후 원본 문자열 : " + str)
 - 객체로 변환할 때 사용
 - Boxing과 Unboxing(자동으로 처리)
 - 오토박싱, 오토 언박싱
+
 ```java
 Integer num = new Integer(17); // 박싱
 int n = num.intValue();        // 언박싱
@@ -199,6 +215,7 @@ Character ch = 'X'; //  오토박싱
 char c = ch;     //오토언박싱
 System.out.println(c);
 ```
+
 ---
 - Enum 클래스(열거체)
 - values() 메소드: 모든 배열 반환
